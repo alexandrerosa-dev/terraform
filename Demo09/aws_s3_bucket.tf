@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "novo" { 
-    bucket = "ed-my-bucket" 
+    count = 2
+    bucket = "ed-my-bucket-${count.index}" 
     tags   = {
         "enviroment" = "dev" 
     }
